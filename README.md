@@ -37,19 +37,19 @@ This project answers those questions using **Excel pivots & charts** on top of a
 ```text
 delivery-operator-performance-analytics/
 ├─ data/           # data files (CSV / Excel exported from Access)
-├─ excel/          # original Excel workbook with pivots & charts
-├─ images/         # PNG charts used in this README
-├─ sql/            # schema and example queries
+├─ Excel/          # original Excel workbook with pivots & charts
+├─ Images/         # PNG charts used in this README
+├─ SQL/            # schema and example queries
 └─ README.md       # this file
 ````
 
 Key assets:
 
-* `excel/Excel workbook with pivots and charts.xlsx` – the workbook exported from Access, containing the pivots & charts.
-* `images/Important Delivery Operators.png` – top operators by total value.
-* `images/Total Delivery Value by Center.png` – total value by distribution center.
-* `images/Top Delivery By Operator.png` – alternative operator view.
-* `sql/schema.sql` – logical schema for delivery centers and delivery records.
+* `Excel/Excel workbook with pivots and charts.xlsx` – the workbook exported from Access, containing the pivots & charts.
+* `Images/Important Delivery Operators.png` – top operators by total value.
+* `Images/Total Delivery Value by Center.png` – total value by distribution center.
+* `Images/Top Delivery By Operator.png` – alternative operator view.
+* `SQL/schema.sql` – logical schema for delivery centers and delivery records.
 
 ---
 
@@ -76,7 +76,7 @@ The file lives in the **Excel** workbook and can also be exported as CSV into th
 
 ## 4. SQL Schema (Design)
 
-In [`sql/schema.sql`](sql/schema.sql) I defined a simple schema for this data:
+In [`SQL/schema.sql`](SQL/schema.sql) I defined a simple schema for this data:
 
 * `DeliveryCenter(DCID, CenterName, City, IsCityCenter)`
 * `DeliveryRecord(OperatorID, FullName, DCID, Phone, Product, UnitPrice, Quantity, TotalValue, …)`
@@ -113,7 +113,7 @@ This shows how I would structure the data if I were putting it into **Oracle / P
 
 Most of the analysis was done in Excel using pivot tables and charts.
 The workbook is in:
-[`excel/Excel workbook with pivots and charts.xlsx`](excel/Excel%20workbook%20with%20pivots%20and%20charts.xlsx)
+[`Excel/Excel workbook with pivots and charts.xlsx`](Excel/Excel%20workbook%20with%20pivots%20and%20charts.xlsx)
 
 ### 5.1 Total Delivery Value by Center
 
@@ -125,7 +125,7 @@ To understand **which distribution centers matter most**, I built a pivot:
 
 Chart example:
 
-![Total Delivery Value by Center](images/Total%20Delivery%20Value%20by%20Center.png)
+![Total Delivery Value by Center](Images/Total%20Delivery%20Value%20by%20Center.png)
 
 This answers:
 
@@ -142,7 +142,7 @@ To see **which operators are most important**, I built another pivot:
 
 Chart example:
 
-![Important Delivery Operators](images/Important%20Delivery%20Operators.png)
+![Important Delivery Operators](Images/Important%20Delivery%20Operators.png)
 
 This makes it easy to see:
 
@@ -154,7 +154,7 @@ This makes it easy to see:
 
 I also created a second operator chart layout:
 
-![Top Delivery By Operator](images/Top%20Delivery%20By%20Operator.png)
+![Top Delivery By Operator](Images/Top%20Delivery%20By%20Operator.png)
 
 This view is useful for presentations and gives a clear ranking of operators by `TotalValue`.
 
@@ -183,7 +183,7 @@ Even though this started as a homework dataset, the analysis pattern is the same
 
 ### Excel
 
-1. Open [`excel/Excel workbook with pivots and charts.xlsx`](excel/Excel%20workbook%20with%20pivots%20and%20charts.xlsx).
+1. Open [`Excel/Excel workbook with pivots and charts.xlsx`](Excel/Excel%20workbook%20with%20pivots%20and%20charts.xlsx).
 2. Go to the pivot table sheets (e.g., **Centers**, **Operators**).
 3. Use filters/slicers for:
 
@@ -196,7 +196,7 @@ Even though this started as a homework dataset, the analysis pattern is the same
 
 ### SQL (optional if loaded into a database)
 
-1. Create the tables using [`sql/schema.sql`](sql/schema.sql).
+1. Create the tables using [`SQL/schema.sql`](SQL/schema.sql).
 2. Import the data from Excel/CSV into `DeliveryCenter` and `DeliveryRecord`.
 3. Run queries such as:
 
@@ -240,5 +240,3 @@ This is directly relevant for:
 * **Data / Business Analyst** roles in e-commerce, retail, transportation, or delivery companies
 
 and complements my other projects on A/B testing, risk analytics, and customer/order data.
-
-```
